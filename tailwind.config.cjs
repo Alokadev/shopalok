@@ -8,7 +8,7 @@ module.exports = {
         hotPink: '#FF1966',
         dark: '#111111',
         light: '#FAFAFA'
-      }
+      },
     }
   },
   plugins: []

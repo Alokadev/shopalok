@@ -19,16 +19,16 @@
   on:mouseleave={() => {
     hover = false;
   }}
-  class="h-full w-full overflow-hidden"
+  class="h-full w-full overflow-hidden gap-8 rounded-xl"
 >
   <a
     {href}
     data-sveltekit-prefetch
-    class="relative flex h-full w-full items-center justify-center focus:border-2 focus:border-blue-500"
+    class="relative flex h-full w-full items-center justify-center focus:border-2 focus:border-blue-500 rounded-lg"
   >
     <img
       alt={title}
-      class={`w-full flex-none transition duration-300 ease-in-out md:w-1/2 lg:w-full ${
+      class={`w-full flex-none transition duration-300 ease-in-out md:w-1/2 lg:w-full rounded-lg${
         hover ? 'scale-110' : ''
       }`}
       fetchpriority={priority === 'eager' ? 'high' : 'low'}
@@ -46,7 +46,6 @@
           </div>
         </div>
       </div>
-
    {/if}
   </a>
 </div>
