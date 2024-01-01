@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>Home – SvelteKit Commerce</title>
+  <title>Home – Alok</title>
 </svelte:head>
 
 <main>

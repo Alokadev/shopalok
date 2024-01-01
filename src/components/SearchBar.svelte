@@ -24,7 +24,7 @@
     bind:value
     placeholder="Search for products..."
     autocomplete="off"
-    class="w-full border border-black bg-white p-2 text-black"
+    class="w-full border rounded-lg border-black bg-white p-2 text-black "
   />
 </form>
 
