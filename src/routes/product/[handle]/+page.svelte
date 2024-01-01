@@ -71,7 +71,7 @@
     <div class="flex flex-col md:flex-row">
       <div class="md:h-90 md:w-2/3">
         {#key highlightedImageSrc}
-          <div class="relative h-4/5 bg-light">
+          <div class="relative h-4/5 bg-white">
             <GridTile
               title={data.body.product.title}
               price={data.body.product.priceRange.maxVariantPrice.amount}
@@ -113,7 +113,7 @@
       <div class="h-full p-6 md:w-1/3">
         {#each data.body.product.options as option}
           <div class="mb-8">
-            <div class="mb-4 text-sm uppercase tracking-wide">{option.name}</div>
+            <div class="mb-4 text-sm uppercase tracking-wide text-black">{option.name}</div>
             <div class="flex">
               {#each option.values as value}
                 <button
@@ -122,7 +122,7 @@
                   }}
                   class={`${value.length <= 3 ? 'w-12' : 'px-2'} ${
                     selectedOptions[option.name] === value ? 'opacity-100' : 'opacity-60'
-                  } transition duration-300 ease-in-out hover:scale-110 hover:opacity-100 border-white h-12 mr-3 flex items-center justify-center rounded-full border`}
+                  } text-black transition duration-300 ease-in-out hover:scale-110 hover:opacity-100 border-black h-12 mr-3 flex items-center justify-center rounded-full border`}
                 >
                   {value}
                 </button>
@@ -130,11 +130,11 @@
             </div>
           </div>
         {/each}
-        <p class="text-sm">{data.body.product.description}</p>
+        <p class="text-sm text-black">{data.body.product.description}</p>
         <div class="mt-8 flex items-center justify-between">
-          <div class="flex items-center">
+          <div class="flex items-center text-black">
             <div class="mr-1">
-              <Icons type="star" />
+              <Icons type="star"/>
             </div>
             <div class="mr-1">
               <Icons type="star" />
@@ -149,11 +149,11 @@
               <Icons type="star" />
             </div>
           </div>
-          <div class="text-sm opacity-50">36 Reviews</div>
+          <div class="text-sm opacity-50 text-black">36 Reviews</div>
         </div>
         <button
           on:click={addToCart}
-          class="mt-6 flex w-full items-center justify-center bg-light p-4 text-sm uppercase tracking-wide text-black opacity-90 hover:opacity-100"
+          class="mt-6 flex w-full items-center justify-center bg-black p-4 text-sm uppercase tracking-wide text-white opacity-90 hover:opacity-100"
         >
           <span>Add To Cart</span>
           {#if cartLoading}
@@ -166,13 +166,19 @@
           {/if}
         </button>
         <DescriptionToggle
-          title="Care"
-          description="This is a limited edition production run. Printing starts when the drop ends."
-        />
-        <DescriptionToggle
-          title="Details"
-          description="This is a limited edition production run. Printing starts when the drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due to COVID-19."
-        />
+        title="Care"
+        description="This is a limited edition production run. Printing starts when the drop ends."
+        titleClass="text-black"
+         descriptionClass="text-black"
+      />
+      
+      <DescriptionToggle
+        title="Details"
+        description="This is a limited edition production run. Printing starts when the drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due to COVID-19."
+        titleClass="text-black  !important"
+        descriptionClass="text-black"
+      />
+      
       </div>
     </div>
     <div class="px-4 py-8">

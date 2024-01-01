@@ -17,7 +17,20 @@
           loading="lazy"
           src={item.node.images.edges[0].node.originalSrc}
         />
-        <div class="absolute top-0 left-0 z-40 mt-32 ml-44 bg-gray-900 rounded-lg p-4">{item.node.title}</div>
+
+        <div class="absolute center-0 bottom-0 m-3 overflow-hidden">
+          <div
+            class="flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white"
+          >
+            <h3 class="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
+              {item.node.title}
+            </h3>
+            <div class="flex-none rounded-full bg-blue-600 p-2 text-white">
+              $ 25
+              <div class="hidden @[275px]/label:inline">$</div>
+            </div>
+          </div>
+        </div>
       </a>
     {/each}
   </div>

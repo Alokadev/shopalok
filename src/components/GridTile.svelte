@@ -1,3 +1,5 @@
+<!-- YourComponent.svelte -->
+
 <script>
   export let title = '';
   export let removeLabels = false;
@@ -20,14 +22,13 @@
   class="h-full w-full overflow-hidden"
 >
   <a
-    data-test="grid-tile"
     {href}
     data-sveltekit-prefetch
-    class="focus:border-blue-500 focus:border-2 relative flex h-full w-full items-center justify-center"
+    class="relative flex h-full w-full items-center justify-center focus:border-2 focus:border-blue-500"
   >
     <img
       alt={title}
-      class={`w-full md:w-1/2 lg:w-full flex-none transition duration-300 ease-in-out ${
+      class={`w-full flex-none transition duration-300 ease-in-out md:w-1/2 lg:w-full ${
         hover ? 'scale-110' : ''
       }`}
       fetchpriority={priority === 'eager' ? 'high' : 'low'}
@@ -36,16 +37,16 @@
       src={imageSrc}
     />
     {#if !removeLabels}
-<div class="absolute top-0 left-0 overflow-hidden">
-  <div class="bg-gray-500 p-3 ml-1 mt-1 text-2xl font-medium text-white rounded-lg">
-    {title}
-  </div>
-  <div class="w-fit bg-gray-900 ml-1 p-3 mt-3 text-sm text-white rounded-lg">
-    ${price}
-    {currencyCode}
-  </div>
-</div>
+      <div class="absolute left-0 top-0 overflow-hidden m-3">
+        <div class="flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white">
+          <h3 class="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">{title}</h3>
+          <div class="flex-none rounded-full bg-blue-600 p-2 text-white">
+            ${price}
+            <div class="hidden @[275px]/label:inline">{currencyCode}</div>
+          </div>
+        </div>
+      </div>
 
-    {/if}
+   {/if}
   </a>
 </div>

@@ -46,7 +46,7 @@
           <a
             data-sveltekit-prefetch
             href={tab.path}
-            class={`hover:opacity-100 px-2 py-1 text-white rounded-lg ${
+            class={`hover:opacity-100 px-2 py-1 text-black rounded-lg ${
               currentRoute === tab.path ? 'opacity-100' : 'opacity-75'
             }`}>{tab.name}</a
           >
@@ -59,7 +59,7 @@
   </div>
   <div class="ml-auto flex items-center">
     <button on:click={openCart} class="relative my-2 mx-4">
-      <Icons strokeColor="#fff" type="cart" />
+      <Icons strokeColor="black" type="cart" />
       <div
         data-test="cart-quantity"
         class="absolute bottom-0 left-0 -ml-3 -mb-3 flex h-5 w-5 items-center justify-center rounded-full border border-black bg-white text-xs text-black"
@@ -103,7 +103,7 @@
             </div>
           </button>
         </div>
-        <div class="mt-6 flex w-full flex-col">
+        <div class="mt-6 flex w-full flex-col font-black">
           {#each tabs as tab, i (tab.name)}
             <div
               class:active={currentRoute === tab.path}
